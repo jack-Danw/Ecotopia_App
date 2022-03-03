@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'teste01',
+  appName: 'Ecotopia_United',
   webDir: 'www',
   bundledWebRuntime: false
 };
