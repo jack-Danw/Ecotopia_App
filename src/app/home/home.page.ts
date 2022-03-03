@@ -18,9 +18,9 @@ export class HomePage {
   @ViewChild('background') background: any;
   @ViewChild('swipeDown') swipeDown: any;
   public options: Array<any> = [
-    { icon: 'person-outline', text: 'Home' },
-    { icon: 'gift-outline', text: 'Resgatar Pontos' },
-    { icon: 'qr-code-outline', text: 'Adicionar pontos' },
+    { icon: 'home-outline', text: 'Home' },
+    { icon: 'gift-outline', text: 'Resgatar' },
+    { icon: 'cash-outline', text: 'Transferir' },
   ];
 
   public slidesOptions: any = { slidesPerView: 3, freeMode: true };
@@ -28,10 +28,20 @@ export class HomePage {
   public items: Array<any> = [
     { icon: 'help-circle-outline', text: 'Me Ajuda' },
     { icon: 'person-outline', text: 'Perfil' },
-    { icon: 'cash-outline', text: 'Configurar conta' },
-    { icon: 'card-outline', text: 'Configurar cartão' },
+    { icon: 'build-outline', text: 'Configurar conta' },
     { icon: 'phone-portrait-outline', text: 'Configurações de app' },
   ];
+
+  public giftCards: Array<any> = [
+    { source: '/assets/card-amazon.png'},
+    { source: '/assets/card-netflix.png'},
+    { source: '/assets/card-prime.png'},
+    { source: '/assets/card-psn.png'},
+    { source: '/assets/card-shopee.png'},
+    { source: '/assets/card-spotify.png'},
+    { source: '/assets/card-steam.png'},
+    { source: '/assets/card-xbox.png'},
+  ]
   public initialStep: number = 0;
   private maxTranslate: number;
   private animation: Animation;
