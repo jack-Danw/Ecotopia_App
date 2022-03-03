@@ -1,0 +1,12 @@
+<ion-tabs>
+
+  <!--botões de "páginas"-->
+  <ion-tab-bar color="primary" slot="bottom">
+    <ion-tab-button  *ngFor="let tabster of tabsters" [tab]="tabster.tab">
+      <ion-icon [name]="tabster.icon"></ion-icon>
+      <ion-label>{{ tabster.label }}</ion-label>
+    </ion-tab-button>
+   
+  </ion-tab-bar>
+
+</ion-tabs>
