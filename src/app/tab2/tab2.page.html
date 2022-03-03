@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      <img class="user-Photo" src="/assets/DarkPurple.png" />
+      <span>Bernardo</span>
+
+      <ion-button
+        (click)="toggleBlocks()"
+        color="light"
+        fill="clear"
+        size="small"
+      >
+        <ion-icon
+          slot="icon-only"
+          [name]="initialStep > 0 ? 'arrow-up-outline' : 'arrow-down-outline'"
+        ></ion-icon>
+      </ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="primary" [scrollY]="!swiping">
+  <div #background class="background opacity-transition">
+    <div class="bank-information ion-text-center">
+      <img class="qrcode" src="/assets/qr-code.png" />
+    </div>
+
+    <ion-list lines="full">
+      <ion-item *ngFor="let item of items" detail>
+        <ion-icon slot="start" [name]="item.icon"></ion-icon>
+
+        <ion-label>{{ item.text }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button class="logout" color="light" expand="block" fill="outline">
+      <strong>SAIR DA CONTA</strong>
+    </ion-button>
+  </div>
+  <!--topo do card-->
+  <div #blocks class="blocks" [ngClass]="fixedblocks() ? 'fixed' : null">
+    <ion-card>
+      <ion-item #swipeDown class="ion-margin-vertical" lines="none">
+        <ion-icon slot="start" name="gift-outline"></ion-icon>
+        <ion-label><strong class="letreiro">Resgate cartões</strong></ion-label>
+      </ion-item>
+      <!--conteúdo do card-->
+      <ion-card-content class="ion-no-padding">
+        <div class="ion-padding ion-margin-vertical cash">
+          <ion-item *ngFor="let giftCard of giftCards" lines="none">
+            <ion-img [src]="giftCard.source"></ion-img>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
